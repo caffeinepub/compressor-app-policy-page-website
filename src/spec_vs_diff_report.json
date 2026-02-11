@@ -1,0 +1,45 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-11T01:17:56.780Z",
+  "summary": "REQ-7 is partially addressed via frontend routing changes (redirect from \"/\" to \"/policy\" and a client-side catch-all). However, REQ-6 (deployment documentation) is not implemented, and the diff does not show any Internet Computer assets-canister/SPAs fallback configuration needed to guarantee refresh/deep-link behavior in production for \"/policy\".",
+  "missing_requirements": [
+    {
+      "id": "REQ-6",
+      "requirement": "Add clear, repo-local deployment documentation for publishing the current Compressor policy website to the Internet Computer, including prerequisites and exact commands to build and deploy both the frontend assets canister and the backend canister.",
+      "reason": "No new README/markdown deployment guide was added; the diff shows only frontend routing/HTML changes and a project state update.",
+      "evidence": [
+        "<file-diff>: Added files: none",
+        "project_state.json",
+        "frontend/src/App.tsx",
+        "frontend/index.html"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "Ensure the deployed site works correctly when users land directly on both \"/\" and \"/policy\" (no blank page or routing error on refresh), and that \"/\" continues to redirect to \"/policy\" in production.",
+      "reason": "While the SPA now redirects \"/\" to \"/policy\", the diff does not include any Internet Computer assets canister configuration (e.g., SPA fallback/404 handling at the canister level) to ensure that directly opening or refreshing \"/policy\" will not return a 404 before the SPA loads. Client-side NotFoundRoute handling does not cover server/canister-level 404s on refresh.",
+      "evidence": [
+        "frontend/src/App.tsx",
+        "frontend/index.html",
+        "<file-diff>: no changes shown to dfx.json / asset canister config (not present in diff summary)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Client-side catch-all NotFoundRoute that redirects unknown routes to \"/policy\".",
+      "reason": "REQ-7 only asks for correct behavior on \"/\" and \"/policy\" (including refresh) and a redirect from \"/\" to \"/policy\"; a global redirect for all unknown routes is additional behavior not explicitly requested.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "project_state.json"
+  ]
+}

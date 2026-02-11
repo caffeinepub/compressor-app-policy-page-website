@@ -1,0 +1,56 @@
+{
+  "kind": "build_request",
+  "title": "Publish/deploy the Compressor policy website",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-6",
+      "text": "Add clear, repo-local deployment documentation for publishing the current Compressor policy website to the Internet Computer, including prerequisites and exact commands to build and deploy both the frontend assets canister and the backend canister.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "recent-messages"
+        ],
+        "quotes": [
+          "Publish my website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A new deployment guide exists in the repository (for example, a top-level README section or a new markdown file) written in English.",
+        "The guide includes prerequisites (DFX version expectations, how to start dfx locally, and how to authenticate when deploying).",
+        "The guide includes step-by-step commands for local deployment and for mainnet deployment, covering both canisters (backend and frontend assets).",
+        "Following the documented steps results in a working site where visiting the deployed URL loads the policy page."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Ensure the deployed site works correctly when users land directly on both \"/\" and \"/policy\" (no blank page or routing error on refresh), and that \"/\" continues to redirect to \"/policy\" in production.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "recent-messages"
+        ],
+        "quotes": [
+          "Publish my website"
+        ]
+      },
+      "acceptanceCriteria": [
+        "When opening the deployed site at the root path \"/\", the app redirects to \"/policy\" and renders the policy page.",
+        "When opening the deployed site directly at \"/policy\", the policy page renders successfully.",
+        "Refreshing the browser on \"/policy\" continues to work (no 404/asset routing failure)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor in backend/main.mo; only add migration.mo if an upgrade requires state migration.",
+    "Do not edit files under frontend/src/components/ui or other immutable paths listed in SYSTEM_CONTEXT."
+  ],
+  "nonGoals": [
+    "Setting up a custom domain name or DNS configuration.",
+    "Adding new application features beyond publishing/deployment readiness (e.g., authentication flows, data storage, analytics)."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

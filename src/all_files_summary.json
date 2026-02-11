@@ -1,0 +1,16 @@
+{
+  "backend/main.mo": "Empty Motoko actor definition with no exposed functionality.",
+  "feature_evidence.json": "Feature evidence report describing routing behavior for root and /policy paths and listing related files and components.",
+  "frontend-file-summaries.txt": "Prewritten summaries of key frontend files including App.tsx, PolicyPage, index.css, and index.html.",
+  "frontend/index.css": "Tailwind base style overrides defining extensive OKLCH color variables and theming for light and dark mode.",
+  "frontend/index.html": "HTML entry point defining SPA root element, base href, metadata, and script loader for main.tsx.",
+  "frontend/src/App.tsx": "Configures TanStack Router to redirect '/' to '/policy' and handles unknown routes by redirecting to the policy page.",
+  "frontend/src/hooks/useActor.ts": "React Query hook creating an authenticated or anonymous backend actor and refreshing dependent queries when identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Comprehensive Internet Identity context provider and hook managing authentication state, login, logout, and identity restoration.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder for future React Query hooks.",
+  "frontend/src/index.css": "Tailwind CSS theme with amber/orange palette, accessibility enhancements, smooth scrolling, and typography improvements.",
+  "frontend/src/main.tsx": "Application entry that initializes React, wraps the app in query and identity providers, and loads global styles.",
+  "frontend/src/pages/PolicyPage.tsx": "Large Privacy Policy page with header, table of contents, scroll navigation, and multiple detailed policy sections.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom colors, typography, animations, and plugins for container queries and animations.",
+  "project_state.json": "Describes the project state, listing implemented features and pending requests for building and deploying a policy page."
+}

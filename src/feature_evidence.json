@@ -1,0 +1,24 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-ensure-the-deployed-site-works-correctly-when-users-land-directly-on-both-and-policy-no-blank-page-or-routing-error-on-refresh-and-that-continues-to-redirect-to-policy-in-production",
+      "featureTitle": "Ensure the deployed site works correctly when users land directly on both \"/\" and \"/policy\" (no blank page or routing error on refresh), and that \"/\" continues to redirect to \"/policy\" in production.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

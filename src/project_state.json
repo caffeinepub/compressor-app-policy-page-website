@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Build a website policy page for the user's compressor app.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-policy-website-for-the-compressor-app-that-is-accessible-at-a-clear-route-e-g-policy-and-renders-as-the-primary-content-of-the-app",
+      "title": "Create a single-page policy website for the compressor app that is accessible at a clear route (e.g., \"/policy\") and renders as the primary content of the app.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-well-structured-english-policy-content-sections-with-clear-headings-and-placeholder-text-that-the-user-can-easily-edit-effective-date-privacy-policy-data-collection-usage-data-sharing-data-retention-security-children-s-privacy-user-rights-choices-changes-to-this-policy-and-contact-information",
+      "title": "Add well-structured, English policy content sections with clear headings and placeholder text that the user can easily edit: Effective Date, Privacy Policy, Data Collection & Usage, Data Sharing, Data Retention, Security, Children’s Privacy, User Rights/Choices, Changes to This Policy, and Contact Information.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-basic-site-chrome-suitable-for-a-policy-page-a-top-header-with-the-app-name-compressor-and-a-simple-in-page-table-of-contents-linking-to-each-policy-section-include-a-footer-repeating-contact-information-and-the-effective-date",
+      "title": "Add basic site chrome suitable for a policy page: a top header with the app name (\"Compressor\") and a simple in-page table of contents linking to each policy section; include a footer repeating contact information and the effective date.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-establish-a-coherent-distinctive-visual-theme-for-the-policy-site-colors-typography-spacing-and-component-styling-and-apply-it-consistently-across-headings-links-cards-sections-header-and-footer-avoid-blue-purple-as-the-primary-palette",
+      "title": "Establish a coherent, distinctive visual theme for the policy site (colors, typography, spacing, and component styling) and apply it consistently across headings, links, cards/sections, header, and footer (avoid blue/purple as the primary palette).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-policy-page-has-basic-accessibility-and-metadata-semantic-html-structure-proper-heading-order-visible-focus-states-for-links-and-document-title-description-appropriate-for-a-policy-page",
+      "title": "Ensure the policy page has basic accessibility and metadata: semantic HTML structure (proper heading order), visible focus states for links, and document title/description appropriate for a policy page.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-deployed-site-works-correctly-when-users-land-directly-on-both-and-policy-no-blank-page-or-routing-error-on-refresh-and-that-continues-to-redirect-to-policy-in-production",
+      "title": "Ensure the deployed site works correctly when users land directly on both \"/\" and \"/policy\" (no blank page or routing error on refresh), and that \"/\" continues to redirect to \"/policy\" in production.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a website policy page for the compressor app",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Publish/deploy the policy website (make it live)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add clear, repo-local deployment documentation for publishing the current Compressor policy website to the Internet Computer, including prerequisites and exact commands to build and deploy both the frontend assets canister and the backend canister.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Compressor App Policy Page Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

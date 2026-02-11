@@ -1,0 +1,8 @@
+{
+  "frontend/src/App.tsx": "Main app component with TanStack Router setup that redirects root path to /policy, renders the PolicyPage component, and includes a catch-all NotFoundRoute to handle deep links and 404s by redirecting to /policy for production deployments.",
+  "frontend/src/pages/PolicyPage.tsx": "Complete policy page component with header, table of contents, 10 comprehensive policy sections (Effective Date, Privacy Policy, Data Collection & Usage, Data Sharing, Data Retention, Security, Children's Privacy, User Rights & Choices, Changes to Policy, Contact), and footer with smooth scroll navigation.",
+  "frontend/src/index.css": "Global styles with warm amber/orange OKLCH color palette, enhanced focus states for accessibility, smooth scrolling, and typography improvements.",
+  "frontend/index.html": "HTML entry point with base href tag for proper SPA routing, updated title and meta description for the Compressor privacy policy page.",
+  "frontend/tailwind.config.js": "Tailwind configuration with Inter font family added for distinctive typography.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file for future React Query hooks if backend integration is needed."
+}

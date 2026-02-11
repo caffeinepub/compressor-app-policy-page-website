@@ -1,0 +1,45 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Compressor policy website — deployment readiness and production routing",
+  "requirements": [
+    {
+      "id": "REQ-6",
+      "summary": "Add repo-local deployment documentation covering prerequisites and exact commands to deploy frontend assets and backend canisters.",
+      "acceptanceCriteria": [
+        "A new deployment guide exists in the repository (for example, a top-level README section or a new markdown file) written in English.",
+        "The guide includes prerequisites (DFX version expectations, how to start dfx locally, and how to authenticate when deploying).",
+        "The guide includes step-by-step commands for local deployment and for mainnet deployment, covering both canisters (backend and frontend assets).",
+        "Following the documented steps results in a working site where visiting the deployed URL loads the policy page."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/DEPLOYMENT.md",
+          "operation": "create",
+          "description": "Create an English deployment guide that documents prerequisites (dfx version expectation, starting local replica, authentication for deploy) and exact command sequences for local + mainnet deployment of both canisters (backend + frontend assets), referencing the repository’s existing IC scaffolding. Use the github-export-icp-cli component (dfx.json/deployment script templates capability) and the build-template-react component (frontend build scripts capability) as the basis for the documented commands; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Ensure SPA routing works on direct land/refresh for / and /policy and keep / redirecting to /policy in production.",
+      "acceptanceCriteria": [
+        "When opening the deployed site at the root path \"/\", the app redirects to \"/policy\" and renders the policy page.",
+        "When opening the deployed site directly at \"/policy\", the policy page renders successfully.",
+        "Refreshing the browser on \"/policy\" continues to work (no 404/asset routing failure)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Update TanStack Router configuration to include an explicit not-found / catch-all handling that routes unknown locations to the PolicyPage (or redirects to /policy), so that when the assets canister serves the SPA entry for deep links the app always resolves to the policy view and / continues to redirect to /policy."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Adjust the SPA HTML entry to be resilient on deep-link loads (e.g., ensure base URL handling is correct so built assets resolve when the browser location is /policy), supporting refresh-on-/policy behavior in production deployments."
+        }
+      ]
+    }
+  ]
+}
